@@ -1,0 +1,200 @@
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.20.7" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>[Battle Royale] Dev Log 1 &middot; Klnsyf</title>
+  
+
+  
+  <link rel="stylesheet" href="https://klnsyf.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://klnsyf.github.io/css/syntax.css">
+  <link rel="stylesheet" href="https://klnsyf.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Klnsyf" />
+  
+  
+    &lt;<link rel="stylesheet" href="/css/styles/github.css">
+	<script src="/js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	
+</head>
+
+	<body class=" ">
+		<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://klnsyf.github.io/"><h1>Klnsyf</h1></a>
+      <p class="lead">
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="/post/java/project-battle-roayle/"> Project [Battle Royale] </a></li>
+      
+        <li><a href="/post/python/python.init/"> Python_init() </a></li>
+      
+        <li><a href="/post/ruff/ruff.init/"> Ruff.init() </a></li>
+      
+        <li><a href="/post/timing/test/"> Test </a></li>
+      
+        <li><a href="/post/java/battle-roayle-dev-log-1/"> [Battle Royale] Dev Log 1 </a></li>
+      
+        <li><a href="/post/java/battle-roayle-third-reincarnation/"> [Battle Royale] Third Reincarnation </a></li>
+      
+        <li><a href="/post/java/battle-royale-update-log---1.0.0/"> [Battle Royale] Update Log - 1.0.0 </a></li>
+      
+        <li><a href="/post/admin/top-worklist/"> [Top] Schedule </a></li>
+      
+    </ul>
+
+    <p>&copy; 2017. All rights reserved. </p>
+  </div>
+</div>
+
+
+		<div class="content container">
+			<div class="post">
+			 	<h1>[Battle Royale] Dev Log 1</h1>
+			  <span class="post-date">Tue, Feb 14, 2017</span>
+			      
+
+<h3 id="关于随机散布问题的研究">关于随机散布问题的研究</h3>
+
+<blockquote>
+<p>Version: 1.7.56.734 - <strong>dev/kls</strong></p>
+</blockquote>
+
+<p>随机散布,指的是游戏开始时将玩家随机传送至战场这一过程.</p>
+
+<hr />
+
+<p>在 <em>1.0.0 (2016-01-20)</em> 版本中,这一过程使用的是<code>Minecraft</code>内部自带的指令 <strong><em>spreadplayers</em></strong> .</p>
+
+<blockquote>
+<p>spreadplayers [x] [z] [spreadDistance] [maxRange] [respectTeams] [player …]</p>
+</blockquote>
+
+<p>但该方法会导致两个问题:<br />
+<em>1.</em> 不能设置最小传送距离,易出现某欧皇开局就在战场中央的<strong>不公平</strong>局面<br />
+<em>2.</em> 必须使用<strong><code>Minecraft</code>内部</strong>的判据来选定要传送的玩家<br />
+因此并不能很好地满足我们<strong>公平公正公开</strong>的要求.<br />
+// 总是在测试的时候被人说是开挂. 明明就是我有纯正的欧洲血统<strong>╭(╯^╰)╮</strong></p>
+
+<hr />
+
+<p>于是,在 <em>1.2.0 (2016-02-10)</em> 版本中,对于随机散布的方法进行了变更.<br />
+使用了 <strong><em>java.util.Random</em></strong> 中提供的方法.<br />
+生成3个随机数,其中两个分别控制x和z轴上的位置,另一个控制所在象限.<br />
+通过控制随机数的生成范围,已经可以做到控制<strong>最小传送距离</strong>.<br />
+但该方法同样会导致两个问题:<br />
+<em>1.</em> 这种随机下的PDF并不是以原点向外<strong>均匀</strong>分布.<br />
+<em>2.</em> 难以控制传送目标之间的距离.<br />
+// 实际上,第二点通过增加尝试数是可以得到解决的,但起初的改动出现了一点<strong>小</strong>问题.<br />
+// ↑ 然而<strong>最重要</strong>的是…… 仍然出现有人两个坐标都是最小值(没错就是我),而某人两个坐标都是最大值的情况.</p>
+
+<hr />
+
+<p>然后,直到 <em>1.5.0 (2016-08-04)</em> 版本,我再次改动了随机散布的算法.<br />
+不同于以往的是,这次的要求更加的明确:<br />
+1. 所有玩家被传送后到原点的距离均为 <strong><em>spreadDistance</em></strong>.<br />
+2. 所有玩家在x,z轴上的坐标的绝对值不小于<strong><em>minRange</em></strong>, 不大于<strong><em>maxRange</em></strong>.<br />
+3. 任意两个玩家间的距离不小于 <strong><em>space</em></strong>.<br />
+<code><pre>
+    ArrayList<Double> spreadAttempt(int attempt) {
+        // 计算符合 minRange 要求的最小弧度值.
+        double minRadian = Math.asin(minRange / spreadDistance);
+        // 随机生成若干个符合 spreadDistance 要求的点.(画圆)
+        double[] randomRadian = new double[attempt];
+        for (int index = 0; index &lt; attempt; index++) {
+            randomRadian[index] = (new Random()).nextDouble() * 2 * Math.PI;
+        }
+        ArrayList<Double> legalRadian = new ArrayList<Double>();
+        // 舍弃不符合要求的弧度值.
+        for (double radian : randomRadian) {
+            if ((0 &lt;= radian &amp;&amp; radian &lt; minRadian)
+                    || (0.5 * Math.PI - minRadian &lt; radian &amp;&amp; radian &lt; 0.5 * Math.PI + minRadian)
+                    || (Math.PI - minRadian &lt; radian &amp;&amp; radian &lt; Math.PI + minRadian)
+                    || (1.5 * Math.PI - minRadian &lt; radian &amp;&amp; radian &lt; 1.5 * Math.PI + minRadian)
+                    || (2 * Math.PI - minRadian &lt; radian &amp;&amp; radian &lt;= 2 * Math.PI)
+                    || spreadSpaceTest(radian, legalRadian)) {
+            } else {
+                legalRadian.add(radian);
+            }
+        }
+        return legalRadian;
+    }
+    // 判断两个弧度值间是否符合 space 要求.
+    boolean spreadSpaceTest(double testRadian, ArrayList<Double> radianArray) {
+        double minRadianSpace = 2 * Math.asin(minRange / 2 / spreadDistance);
+        boolean test = false;
+        for (double radian : radianArray) {
+            if (Math.abs(testRadian - radian) &lt; minRadianSpace) {
+                test = true;
+            }
+        }
+        return test;
+    }
+</code></pre>
+此次改动效果<strong>拔群</strong>,再也没有人吐槽我作弊了.(手动斜眼)</p>
+
+<hr />
+
+<p>在 <em>1.5.2 (2016-08-14)</em> 版本,我进行了一些微调.<br />
+比如防止出生点在大海中,或者是直接出生在峡谷或悬崖上这种根本<strong>无法开局</strong>的地形.<br />
+此后在 <em>1.5.*</em> 版本中,增加了战场<strong>预加载</strong>的功能,改变了地形生成方式,因此对于随机散布的目的地要求进一步提高.</p>
+
+<hr />
+
+<p>于是就到了 <em>1.6.0 (2016-10-03)</em> 版本.<br />
+该版本出现了一个<strong>重要特性</strong>(<code>Bug</code>),即在10次随机散布中,接近会有<strong>一半</strong>的概率<strong>失败</strong>.<br />
+这不是因为错误的参数设置,只是纯粹的因为Ban掉了过多的地形……<br />
+于是临时将随机散布算法回档至 <em>1.5.2 (2016-08-14)</em> 版本.</p>
+
+<hr />
+
+<blockquote>
+<p>Version: 1.7.56.734 - dev/kls</p>
+</blockquote>
+
+<p>还没发布呢(⊙o⊙)<br />
+我才不会说出来的.</p>
+
+<p>// <strong>TODO</strong></p>
+
+			</div>
+			
+			<h2>Comments</h2>
+			<div id="disqus_thread"></div>
+<script type="text/javascript">
+     
+    var disqus_shortname = 'klnsyfsun'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+			
+		</div>
+
+  </body>
+</html>

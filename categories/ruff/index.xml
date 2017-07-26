@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruff on Klnsyf</title>
+    <link>https://klnsyf.github.io/categories/ruff/</link>
+    <description>Recent content in Ruff on Klnsyf</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</managingEditor>
+    <webMaster>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</webMaster>
+    <lastBuildDate>Sat, 24 Jun 2017 16:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://klnsyf.github.io/categories/ruff/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ruff.init()</title>
+      <link>https://klnsyf.github.io/post/ruff/ruff.init/</link>
+      <pubDate>Sat, 24 Jun 2017 16:00:00 +0800</pubDate>
+      <author>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</author>
+      <guid>https://klnsyf.github.io/post/ruff/ruff.init/</guid>
+      <description>反正这只Ruff我先抱走了.
+ </description>
+    </item>
+    
+  </channel>
+</rss>

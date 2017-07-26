@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Admin on Klnsyf</title>
+    <link>https://klnsyf.github.io/categories/admin/</link>
+    <description>Recent content in Admin on Klnsyf</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</managingEditor>
+    <webMaster>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</webMaster>
+    <lastBuildDate>Sat, 13 Apr 3337 01:10:37 +7734</lastBuildDate>
+    
+	<atom:link href="https://klnsyf.github.io/categories/admin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Top] Schedule</title>
+      <link>https://klnsyf.github.io/post/admin/top-worklist/</link>
+      <pubDate>Sat, 13 Apr 3337 01:10:37 +7734</pubDate>
+      <author>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</author>
+      <guid>https://klnsyf.github.io/post/admin/top-worklist/</guid>
+      <description>Hello,这里是Klnsyf Sun.
+鉴于接下来两个月 (2017-07-01~2017-08-31) 中您可能会遇到包括但不仅限于:
+ 本人失踪、失联、神隐、狂暴、升仙及其任意组合
+ 这一类的情况。
+建议您在遇到该类情况时认真确认本日程。
+ Schedule  2017-07-01: 参观GSMA Mobile World Congress Shanghai - 上海新国际展览中心
+2017-07-02: 2017年上海市中学生数学知识应用竞赛报名 - 上海市科技艺术教育中心
+2017-07-03: SYPT准备 - 上海市松江二中物理实验室
+2017-07-04: SYPT准备 - 上海市松江二中物理实验室
+2017-07-05: SYPT准备 - 上海市松江二中物理实验室
+2017-07-06: SYPT准备 - 上海市松江二中物理实验室
+ 2017-07-07: SYPT准备 - 上海市松江二中物理实验室
+2017-07-08: hack.init() - 上海科技大学
+2017-07-09: hack.init() - 上海科技大学
+2017-07-10: SYPT准备 - 上海市松江二中物理实验室
+2017-07-11: SYPT准备 - 上海市松江二中物理实验室
+2017-07-12: SYPT准备 - 上海市松江二中物理实验室
+2017-07-13: SYPT准备 - 上海市松江二中物理实验室</description>
+    </item>
+    
+  </channel>
+</rss>

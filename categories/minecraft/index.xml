@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Minecraft on Klnsyf</title>
+    <link>https://klnsyf.github.io/categories/minecraft/</link>
+    <description>Recent content in Minecraft on Klnsyf</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</managingEditor>
+    <webMaster>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</webMaster>
+    <lastBuildDate>Tue, 27 Jun 2017 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://klnsyf.github.io/categories/minecraft/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Battle Royale] Update Log - 1.0.0</title>
+      <link>https://klnsyf.github.io/post/java/battle-royale-update-log---1.0.0/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0800</pubDate>
+      <author>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</author>
+      <guid>https://klnsyf.github.io/post/java/battle-royale-update-log---1.0.0/</guid>
+      <description>&amp;lt; !&amp;ndash;Draft&amp;ndash;&amp;gt; [Battle Royale]已更新*1.0.0*版本, 以下是更新日志:</description>
+    </item>
+    
+    <item>
+      <title>[Battle Royale] Third Reincarnation</title>
+      <link>https://klnsyf.github.io/post/java/battle-roayle-third-reincarnation/</link>
+      <pubDate>Mon, 29 May 2017 00:00:00 +0800</pubDate>
+      <author>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</author>
+      <guid>https://klnsyf.github.io/post/java/battle-roayle-third-reincarnation/</guid>
+      <description>[Battle Royale] 已进入第三轮回.
+版本号回归至 v0.2.0 (2017-05-29)
+主要改动如下:
+++ 仅支持使用Java 8且版本不低于1.11的服务器.
+++ 面向开发者的更新。
+++++ 1. 添加了GameStartEvent,GameLoadEvent,GameEndEvent,SummonBlazeEvent,可以被其他插件监听和调用.
+++++ 2. 所有事件监听器的优先级上升一级,以保护防作弊插件对于事件的控制.
+++ 修改了部分特性的处理方式.
+++++ 1. 添加了加入游戏的指令及相关权限.
+++++ 2. 更改了铁块加速边界收缩的功能.
+++++++ 当剩余人数大于 32(可在配置文件中更改) 人时,该功能会被禁用.
+++++++ 当剩余人数大于 16(可在配置文件中更改) 人时,每人最多可以使用2次.
+++++++ 当剩余人数大于 8(可在配置文件中更改) 人时,冷却时间加倍.
+++++++ 当剩余人数不大于 8(可在配置文件中更改) 人时,与旧版本处理方式相同.
+++++ 3. 更改了指南针的功能.
+++++++ 不再显示幸存者的名字.
+++++++ (可在配置文件中启用,默认关闭) 可以右键使用代替丢出以使用指南针.
+++++ 4. 暂时去除了警戒线的设置.
+++++ 5. 现在,如果世界中心的地形是海洋(Ocean),玩家在首次进入安全区时,装备会自动获得冰霜行者的附魔.
+++++ 6. 添加了鞍和马铠的合成表.
+++++ 7. 手持书在金块上潜行,会将金块转化为岩浆,并生成一只必定掉落烈焰棒和地狱疣的烈焰人.
+++++ 8. 控制台输出信息将更加完整的报告战况(可在配置文件中更改).
+// TODO</description>
+    </item>
+    
+    <item>
+      <title>[Battle Royale] Dev Log 1</title>
+      <link>https://klnsyf.github.io/post/java/battle-roayle-dev-log-1/</link>
+      <pubDate>Tue, 14 Feb 2017 00:00:00 +0800</pubDate>
+      <author>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</author>
+      <guid>https://klnsyf.github.io/post/java/battle-roayle-dev-log-1/</guid>
+      <description>关于随机散布问题的研究  Version: 1.7.56.734 - dev/kls
+ 随机散布,指的是游戏开始时将玩家随机传送至战场这一过程.
+在 1.0.0 (2016-01-20) 版本中,这一过程使用的是Minecraft内部自带的指令 spreadplayers .
+ spreadplayers [x] [z] [spreadDistance] [maxRange] [respectTeams] [player …]
+ 但该方法会导致两个问题:
+1. 不能设置最小传送距离,易出现某欧皇开局就在战场中央的不公平局面
+2. 必须使用Minecraft内部的判据来选定要传送的玩家
+因此并不能很好地满足我们公平公正公开的要求.
+// 总是在测试的时候被人说是开挂. 明明就是我有纯正的欧洲血统╭(╯^╰)╮
+于是,在 1.2.0 (2016-02-10) 版本中,对于随机散布的方法进行了变更.
+使用了 java.util.Random 中提供的方法.
+生成3个随机数,其中两个分别控制x和z轴上的位置,另一个控制所在象限.
+通过控制随机数的生成范围,已经可以做到控制最小传送距离.
+但该方法同样会导致两个问题:
+1. 这种随机下的PDF并不是以原点向外均匀分布.
+2. 难以控制传送目标之间的距离.
+// 实际上,第二点通过增加尝试数是可以得到解决的,但起初的改动出现了一点小问题.
+// ↑ 然而最重要的是…… 仍然出现有人两个坐标都是最小值(没错就是我),而某人两个坐标都是最大值的情况.
+然后,直到 1.5.0 (2016-08-04) 版本,我再次改动了随机散布的算法.
+不同于以往的是,这次的要求更加的明确:
+1. 所有玩家被传送后到原点的距离均为 spreadDistance.
+2. 所有玩家在x,z轴上的坐标的绝对值不小于minRange, 不大于maxRange.
+3. 任意两个玩家间的距离不小于 space.
+ ArrayList spreadAttempt(int attempt) { // 计算符合 minRange 要求的最小弧度值.</description>
+    </item>
+    
+    <item>
+      <title>Project [Battle Royale]</title>
+      <link>https://klnsyf.github.io/post/java/project-battle-roayle/</link>
+      <pubDate>Sun, 14 Aug 2016 13:37:00 +0800</pubDate>
+      <author>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</author>
+      <guid>https://klnsyf.github.io/post/java/project-battle-roayle/</guid>
+      <description>虽然我并不知道为什么时至今日我还没有写出介绍文档.
+但它大概很快就会写好的吧……
+It may take several minutes.
+  [Battle Royale]是一个基于Bukkit的Minecraft服务器插件. // 你能在Github中找到其1.2.0版本的源码. 但很可惜,那已经被@Deprecated了.
+// TODO</description>
+    </item>
+    
+  </channel>
+</rss>

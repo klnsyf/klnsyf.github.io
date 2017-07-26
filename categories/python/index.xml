@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Klnsyf</title>
+    <link>https://klnsyf.github.io/categories/python/</link>
+    <description>Recent content in Python on Klnsyf</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</managingEditor>
+    <webMaster>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</webMaster>
+    <lastBuildDate>Sat, 24 Jun 2017 20:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://klnsyf.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python_init()</title>
+      <link>https://klnsyf.github.io/post/python/python.init/</link>
+      <pubDate>Sat, 24 Jun 2017 20:00:00 +0800</pubDate>
+      <author>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</author>
+      <guid>https://klnsyf.github.io/post/python/python.init/</guid>
+      <description>// TODO
+ 本日志包含反转义错误 [斜眼]
+  from cmath import * from random import *
+minRange=1337 maxRange=11037 spreadDistance=7734 spreadSpace=917
+def spreadAttempt(attempt): randomRadian=[] for index in range(attempt): randomRadian.append(random()*2*pi) legelRadian=[] for radian in randomRadian: if(abs(spreadDistance*cos(radian))maxRange or abs(spreadDistance*sin(radian))maxRange or spreadSpaceTest(radian,legelRadian)): continue else: legelRadian.append(radian) for radian in legelRadian: print(str(spreadDistance*cos(radian))+&amp;ldquo;,&amp;rdquo;+str(spreadDistance*sin(radian))) print(len(legelRadian))
+def spreadSpaceTest(testRadian,radianList): for radian in radianList: if((abs(float(testRadian) - float(radian)))&amp;lt;abs(2*asin(spreadSpace/2/spreadDistance))): return True break return False
+spreadAttempt(10000)</description>
+    </item>
+    
+  </channel>
+</rss>

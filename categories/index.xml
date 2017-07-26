@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Klnsyf</title>
+    <link>https://klnsyf.github.io/categories/</link>
+    <description>Recent content in Categories on Klnsyf</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</managingEditor>
+    <webMaster>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</webMaster>
+    <lastBuildDate>Sat, 13 Apr 3337 01:10:37 +7734</lastBuildDate>
+    
+	<atom:link href="https://klnsyf.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Admin</title>
+      <link>https://klnsyf.github.io/categories/admin/</link>
+      <pubDate>Sat, 13 Apr 3337 01:10:37 +7734</pubDate>
+      <author>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</author>
+      <guid>https://klnsyf.github.io/categories/admin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Battle Royale</title>
+      <link>https://klnsyf.github.io/categories/battle-royale/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0800</pubDate>
+      <author>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</author>
+      <guid>https://klnsyf.github.io/categories/battle-royale/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bukkit</title>
+      <link>https://klnsyf.github.io/categories/bukkit/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0800</pubDate>
+      <author>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</author>
+      <guid>https://klnsyf.github.io/categories/bukkit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://klnsyf.github.io/categories/development/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0800</pubDate>
+      <author>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</author>
+      <guid>https://klnsyf.github.io/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://klnsyf.github.io/categories/java/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0800</pubDate>
+      <author>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</author>
+      <guid>https://klnsyf.github.io/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Minecraft</title>
+      <link>https://klnsyf.github.io/categories/minecraft/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0800</pubDate>
+      <author>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</author>
+      <guid>https://klnsyf.github.io/categories/minecraft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://klnsyf.github.io/categories/python/</link>
+      <pubDate>Sat, 24 Jun 2017 20:00:00 +0800</pubDate>
+      <author>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</author>
+      <guid>https://klnsyf.github.io/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ruff</title>
+      <link>https://klnsyf.github.io/categories/ruff/</link>
+      <pubDate>Sat, 24 Jun 2017 16:00:00 +0800</pubDate>
+      <author>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</author>
+      <guid>https://klnsyf.github.io/categories/ruff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Top</title>
+      <link>https://klnsyf.github.io/categories/top/</link>
+      <pubDate>Sat, 13 Apr 3337 01:10:37 +7734</pubDate>
+      <author>Klnsyf_Sun@hotmail.com (Klnsyf Sun)</author>
+      <guid>https://klnsyf.github.io/categories/top/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

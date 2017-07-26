@@ -1,0 +1,120 @@
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.20.7" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>[Battle Royale] Third Reincarnation &middot; Klnsyf</title>
+  
+
+  
+  <link rel="stylesheet" href="https://klnsyf.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://klnsyf.github.io/css/syntax.css">
+  <link rel="stylesheet" href="https://klnsyf.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Klnsyf" />
+  
+  
+    &lt;<link rel="stylesheet" href="/css/styles/github.css">
+	<script src="/js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	
+</head>
+
+	<body class=" ">
+		<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://klnsyf.github.io/"><h1>Klnsyf</h1></a>
+      <p class="lead">
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="/post/java/project-battle-roayle/"> Project [Battle Royale] </a></li>
+      
+        <li><a href="/post/python/python.init/"> Python_init() </a></li>
+      
+        <li><a href="/post/ruff/ruff.init/"> Ruff.init() </a></li>
+      
+        <li><a href="/post/timing/test/"> Test </a></li>
+      
+        <li><a href="/post/java/battle-roayle-dev-log-1/"> [Battle Royale] Dev Log 1 </a></li>
+      
+        <li><a href="/post/java/battle-roayle-third-reincarnation/"> [Battle Royale] Third Reincarnation </a></li>
+      
+        <li><a href="/post/java/battle-royale-update-log---1.0.0/"> [Battle Royale] Update Log - 1.0.0 </a></li>
+      
+        <li><a href="/post/admin/top-worklist/"> [Top] Schedule </a></li>
+      
+    </ul>
+
+    <p>&copy; 2017. All rights reserved. </p>
+  </div>
+</div>
+
+
+		<div class="content container">
+			<div class="post">
+			 	<h1>[Battle Royale] Third Reincarnation</h1>
+			  <span class="post-date">Mon, May 29, 2017</span>
+			      <p><strong>[<em>Battle Royale</em>]</strong> 已进入第<strong>三</strong>轮回.<br />
+<strong>版本号</strong>回归至 <em>v0.2.0 (2017-05-29)</em><br />
+<strong>主要</strong>改动如下:<br />
+++ 仅支持使用<code>Java 8</code>且版本<strong>不低于1.11</strong>的服务器.<br />
+++ 面向<strong>开发者</strong>的更新。<br />
+++++ <strong>1.</strong> 添加了GameStartEvent,GameLoadEvent,GameEndEvent,SummonBlazeEvent,可以被其他插件<strong>监听</strong>和<strong>调用</strong>.<br />
+++++ <strong>2.</strong> 所有事件监听器的<strong>优先级</strong>上升一级,以保护<strong>防作弊</strong>插件对于事件的控制.<br />
+++ 修改了部分<strong>特性</strong>的处理方式.<br />
+++++ <strong>1.</strong> 添加了<strong>加入游戏</strong>的<strong>指令</strong>及相关<strong>权限</strong>.<br />
+++++ <strong>2.</strong> 更改了<strong>铁块</strong>加速边界收缩的功能.<br />
+++++++ 当剩余人数大于 <em>32(可在配置文件中更改)</em> 人时,该功能会被<strong>禁用</strong>.<br />
+++++++ 当剩余人数大于 <em>16(可在配置文件中更改)</em> 人时,每人<strong>最多</strong>可以使用<strong>2</strong>次.<br />
+++++++ 当剩余人数大于 <em>8(可在配置文件中更改)</em> 人时,冷却时间<strong>加倍</strong>.<br />
+++++++ 当剩余人数不大于 <em>8(可在配置文件中更改)</em> 人时,与旧版本处理方式相同.<br />
+++++ <strong>3.</strong> 更改了<strong>指南针</strong>的功能.<br />
+++++++ <strong>不</strong>再显示<strong>幸存者</strong>的名字.<br />
+++++++ <em>(可在配置文件中启用,默认关闭)</em> 可以<strong>右键使用</strong>代替丢出以使用指南针.<br />
+++++ <strong>4.</strong> <strong>暂时</strong>去除了<strong>警戒线</strong>的设置.<br />
+++++ <strong>5.</strong> 现在,如果<strong>世界中心</strong>的<strong>地形</strong>是<strong>海洋(Ocean)</strong>,玩家在首次进入<strong>安全区</strong>时,装备会自动获得<strong>冰霜行者</strong>的附魔.<br />
+++++ <strong>6.</strong> 添加了<strong>鞍</strong>和<strong>马铠</strong>的合成表.<br />
+++++ <strong>7.</strong> 手持<strong>书</strong>在<strong>金块</strong>上<strong>潜行</strong>,会将<strong>金块</strong>转化为<strong>岩浆</strong>,并生成一只<strong>必定</strong>掉落<strong>烈焰棒</strong>和<strong>地狱疣</strong>的<strong>烈焰人</strong>.<br />
+++++ <strong>8.</strong> <strong>控制台</strong>输出信息将更加<strong>完整</strong>的报告战况<em>(可在配置文件中更改)</em>.</p>
+
+<p>// <strong>TODO</strong></p>
+
+			</div>
+			
+			<h2>Comments</h2>
+			<div id="disqus_thread"></div>
+<script type="text/javascript">
+     
+    var disqus_shortname = 'klnsyfsun'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+			
+		</div>
+
+  </body>
+</html>
